@@ -4,7 +4,7 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = true;
         for (int i = 0; i < board.length; i++){
-            if (board[i][i] == 1 && (Win.rowCheck(i) || Win.columnCheck(i))){
+            if (board[i][i] == 1 && (Win.rowCheck(board, i) || Win.columnCheck(board, i))){
                    rsl = false;
                    break;
             }
