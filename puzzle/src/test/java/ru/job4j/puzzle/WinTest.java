@@ -55,4 +55,28 @@ public class WinTest {
         };
         assertThat(Win.check(board), is(false));
     }
+
+    @Test
+    public void whenColumn() {
+        int[][] board = {
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+        };
+        assertThat(Win.columnCheck(board, 2), is(true));
+    }
+
+    @Test
+    public void whenNotColumn() {
+        int[][] board = {
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 0, 0, 0},
+        };
+        assertThat(Win.columnCheck(board, 2), is(false));
+    }
 }
