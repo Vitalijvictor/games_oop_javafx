@@ -1,4 +1,5 @@
 package ru.job4j.puzzle;
+/*Socoban*/
 
 public class Win {
     public static boolean check(int[][] board) {
