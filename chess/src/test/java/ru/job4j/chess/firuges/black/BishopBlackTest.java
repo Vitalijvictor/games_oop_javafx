@@ -57,18 +57,9 @@ public class BishopBlackTest extends TestCase {
         assertThat(Cell.findBy(4, 2), is(way[way.length-1]));
     }
 
-    @Test
+    @Test(expected = ImpossibleMoveException.class)
     public void testWayException() {
         BishopBlack bishopBlackStart = new BishopBlack(Cell.E2);
-        try {
-            Cell[] way = bishopBlackStart.way(Cell.E4);
-            fail("Expected an ImpossibleMoveException to be thrown");
-        } catch (ImpossibleMoveException e1) {
-            assertThat(
-                    e1.getMessage(),
-                    is("Could not move by diagonal from E2 to E4"));
-        }
-
     }
 
     @Test
