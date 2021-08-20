@@ -20,16 +20,11 @@ public class LogicTest {
         logic.move(Cell.C1, Cell.H6);
     }
 
-    @Test(expected = OccupiedCellException.class)
-        public void free() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
-                try {
-                    Logic logic = new Logic();
-                    logic.add(new BishopWhite(Cell.C3));
-                    logic.add(new BishopBlack(Cell.D2));
-                    logic.move(Cell.C3, Cell.D2);
-                } catch (ImpossibleMoveException i) {
-                    i.getMessage();
-                }
+    @Test (expected = ImpossibleMoveException.class)
+    public void whenImpossibleMoveFromE4toE6() throws ImpossibleMoveException, FigureNotFoundException, OccupiedCellException {
+        Logic logic = new Logic();
+        logic.add(new BishopBlack(Cell.C1));
+        logic.move(Cell.C1, Cell.H6);
     }
 
     @Test(expected = FigureNotFoundException.class)
